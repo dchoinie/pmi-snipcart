@@ -14,7 +14,7 @@ export const membershipQuery = graphql`
         contentful_id
         image {
           fixed(width: 50, height: 50) {
-            ...GatsbyContentfulFixed_tracedSVG
+            ...GatsbyContentfulFixed
           }
         }
       }
@@ -34,6 +34,7 @@ export default ({ data }) => {
           <hr />
         </div>
       ))} */}
+      Membership
     </Layout>
   )
 }
