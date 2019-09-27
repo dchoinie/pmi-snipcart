@@ -52,12 +52,6 @@ h5 {
   font-size: 1.5rem;
 }
 
-@tailwind utilities;
-
-.purple {
-  color: var(--main-purple);
-}
-
 .nav-link {
   color: var(--main-purple);
   border-bottom: 2px solid transparent;
@@ -78,12 +72,35 @@ h5 {
   max-width: 250px;
 }
 
-.hero {
-  height: 100vh;
+.hero-title {
+  font-size: 6rem;
+}
+
+.hero-content {
+  text-align: right;
+  color: var(--main-purple);
+}
+
+@media screen and (max-width: 992px) {
+  .nav-link:hover {
+    border-bottom: 2px solid transparent;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .nav-logo {
     max-width: 150px;
   }
+  .hero-title {
+    font-size: 4rem;
+  }
+  .hero-content {
+    text-align: center;
+  }
+}
+
+@tailwind utilities;
+
+.purple {
+  color: var(--main-purple);
 }

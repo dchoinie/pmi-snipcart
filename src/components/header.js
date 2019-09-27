@@ -1,14 +1,7 @@
 import React, { Component } from "react"
 import "./bootstrap.min.css"
 import Logo from "../images/logo.png"
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaEnvelope,
-  FaCartArrowDown,
-  FaBars,
-} from "react-icons/fa"
+import { FaCartArrowDown, FaBars } from "react-icons/fa"
 import { useStaticQuery, Link } from "gatsby"
 
 export default class header extends Component {
@@ -72,40 +65,18 @@ export default class header extends Component {
           <FaBars />
         </button>
         <div className={this.state.css}>
-          <ul className="navbar-nav w-full justify-end px-12">
-            <li className="socials-nav mx-1">
-              <a href="#">
-                <FaFacebook />
-              </a>
-            </li>
-            <li className="socials-nav mx-1">
-              <a href="#">
-                <FaTwitter />
-              </a>
-            </li>
-            <li className="socials-nav mx-1">
-              <a href="#">
-                <FaInstagram />
-              </a>
-            </li>
-            <li className="socials-nav">
-              <a href="#">
-                <FaEnvelope />
-              </a>
-            </li>
-          </ul>
-          <ul className="navbar-nav w-full justify-end px-12">
+          <ul className="navbar-nav w-full justify-end lg:px-12">
             {this.state.links.map(link => {
               return (
-                <li key={link.id} className="nav-item">
+                <li key={link.id} className="nav-item text-right">
                   <Link to={link.path} className="nav-link capitalize">
                     {link.text}
                   </Link>
                 </li>
               )
             })}
-            <li className="nav-item self-center">
-              <FaCartArrowDown className="cart-icon" />
+            <li className="nav-item lg:self-center self-end py-2">
+              <FaCartArrowDown className="cart-icon snipcart-checkout" />
             </li>
           </ul>
         </div>
