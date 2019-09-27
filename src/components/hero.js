@@ -19,7 +19,7 @@ const hero = ({ className }) => (
     render={data => {
       // Set ImageData.
       const imageData = [
-        `linear-gradient(rgba(255, 255, 255, 1) -10%, rgba(255, 255, 255, 0))`,
+        `linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))`,
         data.desktop.childImageSharp.fluid,
       ]
 
