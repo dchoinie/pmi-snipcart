@@ -15,7 +15,7 @@ export class button extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-2">
         <Link to={this.props.to} className="main-btn">
           {this.props.text}
         </Link>
