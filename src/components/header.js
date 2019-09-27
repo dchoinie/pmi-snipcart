@@ -62,7 +62,7 @@ export default class header extends Component {
           type="button"
           onClick={this.navbarHandler}
         >
-          <FaBars />
+          <FaBars className="purple" />
         </button>
         <div className={this.state.css}>
           <ul className="navbar-nav w-full justify-end lg:px-12">
