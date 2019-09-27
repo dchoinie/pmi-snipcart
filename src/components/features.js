@@ -20,7 +20,7 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/" />
+            <Button text="Learn More" to="/cardio" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -34,7 +34,7 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/" />
+            <Button text="Learn More" to="/machine-weights" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -48,7 +48,7 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/" />
+            <Button text="Learn More" to="/free-weights" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -62,7 +62,7 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/" />
+            <Button text="Learn More" to="/personal-training" />
           </div>
         </div>
       </>
