@@ -43,7 +43,7 @@ export default () => {
                 data-item-name={dayPass.title}
                 data-item-price={dayPass.price}
                 data-item-description={dayPass.description.description}
-                data-item-url="https://pmitotalfitness.netlify.com/"
+                data-item-url="https://pmitotalfitness.netlify.com"
                 data-item-image={dayPass.image.fluid.src}
               >
                 Buy
