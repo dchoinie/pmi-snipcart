@@ -29,13 +29,20 @@ export default () => {
   `)
   return (
     <>
-      <SectionTitle title="Montly Membership Options" subTitle="Sign up for one (1) month of access to PMI" />
+      <SectionTitle
+        title="Montly Membership Options"
+        subTitle="Sign up for one (1) month of access to PMI"
+      />
       <div id="monthlyMemberships-container" className="px-6">
         {data.monthlyMemberships.edges.map(({ node: monthlyMembership }) => {
           return (
             <div
               className="text-center flex flex-col justify-between p-4"
-              style={{ border: "2px solid var(--main-purple)" }}
+              style={{
+                border: "2px solid var(--main-purple)",
+                borderRadius: "0.5rem",
+                boxShadow: "2px 2px 15px var(--main-black)",
+              }}
             >
               <h2>{monthlyMembership.title}</h2>
               <p>{monthlyMembership.description.description}</p>
