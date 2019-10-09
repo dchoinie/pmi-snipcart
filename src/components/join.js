@@ -29,7 +29,15 @@ export default () => {
           Membership Options
         </Link>
         <div className="flex justify-center capitalize">
-          <p className="underline">Request more information</p>&nbsp;
+          <p className="underline">
+            <a
+              href="mailto:pmi.totalfitness@hotmail.com?subject=PMI%20Info%20Request"
+              style={{ color: "var(--main-purple)" }}
+            >
+              Request more information
+            </a>
+          </p>
+          &nbsp;
           <p>
             or call{" "}
             <span className="underline">{data.site.siteMetadata.phone}</span>

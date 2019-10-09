@@ -41,7 +41,7 @@ const hero = ({ className }) => (
               <h1 className="lg:tracking-wide font-bold hero-title">
                 Live. Your. Life
               </h1>
-              <h4 className="capitalize">
+              <h4 className="capitalize text-white">
                 Fitness is not a destination, it is a way of life
               </h4>
             </div>
