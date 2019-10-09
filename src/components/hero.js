@@ -9,7 +9,7 @@ const hero = ({ className }) => (
       query {
         desktop: file(relativePath: { eq: "gym1.jpg" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 1920) {
+            fluid(quality: 60, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

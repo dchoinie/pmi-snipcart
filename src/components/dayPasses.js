@@ -5,7 +5,7 @@ import SectionTitle from "../components/sectionTitle"
 
 export default () => {
   const data = useStaticQuery(graphql`
-    {
+    query MyQuery {
       dayPasses: allContentfulDayPasses {
         edges {
           node {
@@ -16,12 +16,6 @@ export default () => {
             id
             price
             title
-            image {
-              fluid {
-                src
-                ...GatsbyContentfulFluid
-              }
-            }
           }
         }
       }
@@ -29,11 +23,16 @@ export default () => {
   `)
   return (
     <>
-      <SectionTitle
-        title="Day Passes"
-        subTitle="Come check out our facilities without any long-term commitment"
-      />
-      <div id="dayPass-container" className="px-6">
+      <div id="dayPass-container px-6 lg:px-0">
+        {data.dayPasses.edges.map(({ node: dayPass }) => {
+          return (
+            <div key={dayPass.id}>
+              <p>{dayPass.title}</p>
+            </div>
+          )
+        })}
+      </div>
+      {/* <div id="dayPass-container" className="px-6">
         {data.dayPasses.edges.map(({ node: dayPass }) => {
           return (
             <div
@@ -46,7 +45,7 @@ export default () => {
             >
               <h2>{dayPass.title}</h2>
               <p>{dayPass.description.description}</p>
-              <h6>Price: ${dayPass.price}</h6>
+              <h6>Price: ${dayPass.price} + tax</h6>
               <button
                 className="main-btn snipcart-add-item"
                 data-item-id={dayPass.id}
@@ -61,7 +60,7 @@ export default () => {
             </div>
           )
         })}
-      </div>
+      </div> */}
     </>
   )
 }
