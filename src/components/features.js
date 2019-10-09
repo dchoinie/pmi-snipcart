@@ -4,7 +4,6 @@ import Icon2 from "../images/icons/machine1A.jpg"
 import Icon3 from "../images/icons/treadmill1A.jpg"
 import Icon4 from "../images/icons/weight1A.jpg"
 import SectionTitle from "../components/sectionTitle"
-import Button from "./button"
 
 export class features extends Component {
   render() {
@@ -20,7 +19,6 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/cardio" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -34,7 +32,6 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/machine-weights" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -48,7 +45,6 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/free-weights" />
           </div>
           <div className="features-card flex-col text-center justify-center">
             <img
@@ -62,7 +58,6 @@ export class features extends Component {
               consequatur tenetur voluptatibus minus, obcaecati culpa explicabo
               nesciunt nisi quaerat vel iusto.
             </p>
-            <Button text="Learn More" to="/personal-training" />
           </div>
         </div>
       </>
