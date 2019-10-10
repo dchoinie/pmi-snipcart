@@ -13,9 +13,9 @@ export class sectionTitle extends Component {
 
   render() {
     return (
-      <div className="flex flex-col justify-center text-center purple my-12">
+      <div className="flex flex-col justify-center purple my-12 max-w-3xl mx-auto text-center">
         <h2 className="font-bold text-3xl lg:text-5xl">{this.props.title}</h2>
-        <h4>{this.props.subTitle}</h4>
+        <h5 className="capitalize">{this.props.subTitle}</h5>
       </div>
     )
   }

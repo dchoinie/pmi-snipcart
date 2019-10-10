@@ -101,15 +101,12 @@ h5 {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(auto, 1fr);
   column-gap: 2rem;
-  row-gap: 2rem;
 }
 
-#monthlyMemberships-container {
+.membershipOptions-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
-  row-gap: 2rem;
 }
 
 #membership-benefits {
@@ -149,9 +146,10 @@ h5 {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto, 1fr);
   }
-  #monthlyMemberships-container {
+  .membershipOptions-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto, 1fr);
+    row-gap: 2rem;
   }
   #membership-benefits {
     grid-template-columns: repeat(1, 1fr);
