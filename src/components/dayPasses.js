@@ -23,7 +23,10 @@ export default () => {
   `)
   return (
     <>
-    <SectionTitle title="Day Passes" subTitle="Not ready to buy a membership? No Problem! Come check out PMI without any commitment" />
+      <SectionTitle
+        title="Day Passes"
+        subTitle="Not ready to buy a membership? No Problem! Come check out PMI without any commitment"
+      />
       <div id="dayPass-container">
         {data.dayPasses.edges.map(({ node: dayPass }) => {
           return (
@@ -35,9 +38,9 @@ export default () => {
                 borderRadius: "0.5rem",
               }}
             >
-              <h2 className="font-bold">{dayPass.title}</h2>
+              <h4>{dayPass.title}</h4>
+              <p>Price: ${dayPass.price}</p>
               <p>{dayPass.description.description}</p>
-              <h2>Price: ${dayPass.price}</h2>
               <button
                 className="main-btn snipcart-add-item w-full"
                 data-item-id={dayPass.id}

@@ -39,6 +39,7 @@ export default () => {
             id
             price
             title
+            initialFee
           }
         }
       }
@@ -46,7 +47,10 @@ export default () => {
   `)
   return (
     <>
-      <SectionTitle title="Month-To-Month Options" subTitle="No long term contract required, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room" />
+      <SectionTitle
+        title="Month-To-Month Options"
+        subTitle="No long term contract required, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room"
+      />
       <div className="membershipOptions-container my-12">
         {data.monthToMonth.edges.map(({ node: monthToMonth }) => {
           return (
@@ -59,7 +63,7 @@ export default () => {
               }}
             >
               <h4>{monthToMonth.title}</h4>
-              <p>${monthToMonth.price}</p>
+              <p>Price: ${monthToMonth.price}</p>
               <p>{monthToMonth.description.description}</p>
               <button
                 className="main-btn snipcart-add-item w-full"
@@ -75,7 +79,10 @@ export default () => {
           )
         })}
       </div>
-      <SectionTitle title="Yearly Contract Options" subTitle="First &amp; last monthly fee due on initial purchase, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room, 1 monthly guest pass plus discounted rates on massage, tanning, yoga &amp; personal training" />
+      <SectionTitle
+        title="Yearly Contract Options"
+        subTitle="First &amp; last monthly fee due on initial purchase, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room, 1 monthly guest pass plus discounted rates on massage, tanning, yoga &amp; personal training"
+      />
       <div className="membershipOptions-container my-12">
         {data.contract.edges.map(({ node: contract }) => {
           return (
@@ -88,7 +95,7 @@ export default () => {
               }}
             >
               <h4>{contract.title}</h4>
-              <p>${contract.price}</p>
+              <p>Price: ${contract.price}</p>
               <p>{contract.description.description}</p>
               <button
                 className="main-btn snipcart-add-item w-full"
@@ -96,8 +103,8 @@ export default () => {
                 data-item-name={contract.title}
                 data-item-price={contract.price}
                 data-item-description={contract.description.description}
-                data-item-payment-interval="Month"
-                data-item-payment-interval-count="1"
+                data-item-min-quantity="12"
+                data-item-max-quantity="12"
                 data-item-url="https://pmitotalfitness.netlify.com/membership"
               >
                 Buy
