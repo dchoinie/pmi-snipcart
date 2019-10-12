@@ -28,7 +28,7 @@ const hero = ({ className }) => (
           Tag="section"
           className={className}
           fluid={imageData}
-          style={{ height: "calc(100vh - 112.22px)" }}
+          style={{ height: "calc(100vh - 100.4px)" }}
         >
           <div
             className="flex justify-center lg:justify-end w-full h-full"

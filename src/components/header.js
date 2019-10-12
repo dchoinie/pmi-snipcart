@@ -1,86 +1,74 @@
 import React, { Component } from "react"
+import { Navbar } from "react-bootstrap"
 import "./bootstrap.min.css"
+import Img from "gatsby-image"
 import Logo from "../images/logo.png"
 import { FaCartArrowDown, FaBars } from "react-icons/fa"
 import { useStaticQuery, Link } from "gatsby"
 
-export default class header extends Component {
-  state = {
-    navbarOpen: false,
-    css: "collaplse navbar-collapse",
-    links: [
-      {
-        id: 1,
-        path: "/",
-        text: "home",
-      },
-      {
-        id: 2,
-        path: "/membership",
-        text: "membership",
-      },
-      {
-        id: 3,
-        path: "/services",
-        text: "services",
-      },
-      {
-        id: 4,
-        path: "/classes",
-        text: "classes",
-      },
-      {
-        id: 5,
-        path: "/about",
-        text: "about",
-      },
-      {
-        id: 6,
-        path: "/contact",
-        text: "contact",
-      },
-    ],
-  }
-
-  navbarHandler = () => {
-    this.state.navbarOpen
-      ? this.setState({ navbarOpen: false, css: "collapse navbar-collapse" })
-      : this.setState({
-          navbarOpen: true,
-          css: "collapse navbar-collapse show",
-        })
-  }
-
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg">
-        <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="Logo" className="nav-logo" />
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={this.navbarHandler}
+export default () => {
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 225) {
+            src
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="flex lg:mx-6"
+      // style={{ border: "1px solid red" }}
+    >
+      <Link to="/">
+        <Img fixed={data.logo.childImageSharp.fixed} />
+      </Link>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse
+        id="responsive-navbar-nav"
+        // style={{ border: "1px solid blue" }}
+        className="flex"
+      >
+        <ul
+          className="flex flex-col lg:flex-row text-right w-full justify-end mb-0"
+          // style={{ border: "1px solid green" }}
         >
-          <FaBars className="purple" />
-        </button>
-        <div className={this.state.css}>
-          <ul className="navbar-nav w-full justify-end lg:px-12">
-            {this.state.links.map(link => {
-              return (
-                <li key={link.id} className="nav-item text-right">
-                  <Link to={link.path} className="nav-link capitalize">
-                    {link.text}
-                  </Link>
-                </li>
-              )
-            })}
-            <li className="nav-item lg:self-center self-end py-2">
-              <FaCartArrowDown className="cart-icon snipcart-checkout" />
-            </li>
-          </ul>
-        </div>
-      </nav>
-    )
-  }
+          <li>
+            <Link to="/membership" className="purple nav-link text-xl">
+              Membership
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="purple nav-link text-xl">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="purple nav-link text-xl">
+              Classes
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="purple nav-link text-xl">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="purple nav-link text-xl">
+              Contact
+            </Link>
+          </li>
+          <li className="self-end lg:self-center">
+            <FaCartArrowDown className="text-2xl cart-icon" />
+          </li>
+        </ul>
+      </Navbar.Collapse>
+    </Navbar>
+  )
 }

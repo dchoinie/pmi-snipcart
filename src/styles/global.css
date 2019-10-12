@@ -48,15 +48,13 @@ h5 {
 @tailwind components;
 
 .cart-icon {
-  color: var(--main-purple);
   cursor: pointer;
-  font-size: 1.5rem;
+  margin: 0.5rem 1rem;
 }
 
 .nav-link {
   color: var(--main-purple);
   border-bottom: 2px solid transparent;
-  font-size: 1.25rem;
 }
 
 .socials-nav {
