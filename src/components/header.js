@@ -23,8 +23,8 @@ export default () => {
     <Navbar
       collapseOnSelect
       expand="lg"
-      className="flex lg:mx-6"
-      // style={{ border: "1px solid red" }}
+      className="flex"
+      style={{ backgroundColor: "#fff" }}
     >
       <Link to="/">
         <Img fixed={data.logo.childImageSharp.fixed} />

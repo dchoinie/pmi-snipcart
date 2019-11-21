@@ -1,7 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 import SectionTitle from "./sectionTitle"
+import MembershipButton from "../components/buttons/membership-button"
+import { FaCheck, FaTimes } from "react-icons/fa"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -18,12 +21,6 @@ export default () => {
             id
             price
             title
-            image {
-              fluid {
-                src
-                ...GatsbyContentfulFluid
-              }
-            }
           }
         }
       }
@@ -47,68 +44,109 @@ export default () => {
   `)
   return (
     <>
-      <SectionTitle
-        title="Month-To-Month Options"
-        subTitle="No long term contract required, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room"
-      />
-      <div className="membershipOptions-container my-12">
+      <h2 className="text-4xl font-bold text-center pt-12">
+        Choose Your Membership
+      </h2>
+      <h6 className="text-center">
+        PMI offers month-to-month options or 1-year contract options. 24-hour
+        access is available with either membership type.
+      </h6>
+      <div
+        id="membershipOptions-container"
+        className="text-center mx-12 my-12"
+        // style={{ border: "1px solid red" }}
+      >
         {data.monthToMonth.edges.map(({ node: monthToMonth }) => {
           return (
             <div
-              className="text-center p-4 max-w-lg mx-auto"
+              className="p-4 mtm-card"
               key={monthToMonth.id}
               style={{
-                boxShadow: "1px 1px 8px var(--main-black)",
-                borderRadius: "0.5rem",
+                backgroundColor: "var(--light-gray)",
               }}
             >
-              <h4>{monthToMonth.title}</h4>
-              <p>Price: ${monthToMonth.price}</p>
-              <p>{monthToMonth.description.description}</p>
-              <button
-                className="main-btn snipcart-add-item w-full"
-                data-item-id={monthToMonth.id}
-                data-item-name={monthToMonth.title}
-                data-item-price={monthToMonth.price}
-                data-item-description={monthToMonth.description.description}
-                data-item-url="https://pmitotalfitness.netlify.com/membership"
-              >
-                Buy
-              </button>
+              <div className="flex flex-col h-full justify-between">
+                <div>
+                  <h5>{monthToMonth.title}</h5>
+                  <p className="capitalize">Type: {monthToMonth.category}</p>
+                  <h2 className="font-bold">${monthToMonth.price}/mo</h2>
+                  <p>{monthToMonth.description.description}</p>
+                  <ul>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 1</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 2</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 3</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaTimes className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaTimes className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                  </ul>
+                </div>
+                <MembershipButton />
+              </div>
             </div>
           )
         })}
-      </div>
-      <SectionTitle
-        title="Yearly Contract Options"
-        subTitle="First &amp; last monthly fee due on initial purchase, unlimited use of aerobic equipment, weight machines, free weights &amp; locker room, 1 monthly guest pass plus discounted rates on massage, tanning, yoga &amp; personal training"
-      />
-      <div className="membershipOptions-container my-12">
         {data.contract.edges.map(({ node: contract }) => {
           return (
             <div
-              className="text-center p-4 max-w-lg mx-auto"
+              className="p-4 con-card"
               key={contract.id}
               style={{
-                boxShadow: "1px 1px 8px var(--main-black)",
-                borderRadius: "0.5rem",
+                backgroundColor: "var(--light-gray)",
               }}
             >
-              <h4>{contract.title}</h4>
-              <p>Price: ${contract.price}</p>
-              <p>{contract.description.description}</p>
-              <button
-                className="main-btn snipcart-add-item w-full"
-                data-item-id={contract.id}
-                data-item-name={contract.title}
-                data-item-price={contract.price}
-                data-item-description={contract.description.description}
-                data-item-min-quantity="12"
-                data-item-max-quantity="12"
-                data-item-url="https://pmitotalfitness.netlify.com/membership"
-              >
-                Buy
-              </button>
+              <div className="flex flex-col h-full justify-between">
+                <div>
+                  <h5>{contract.title}</h5>
+                  <p>Type: {contract.category}</p>
+                  <h2 className="font-bold">${contract.price}/mo</h2>
+                  <p>{contract.description.description}</p>
+                  <ul>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 1</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 2</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 3</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaCheck className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaTimes className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                    <li className="py-2 flex justify-center">
+                      <FaTimes className="mx-1 self-center" />
+                      <p className="mx-1 mb-0">Item 4</p>
+                    </li>
+                  </ul>
+                </div>
+                <MembershipButton />
+              </div>
             </div>
           )
         })}

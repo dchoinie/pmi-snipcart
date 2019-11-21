@@ -8,9 +8,11 @@ export class testimonialsCarousel extends Component {
     return (
       <div className="px-6 lg:px-0">
         <Carousel
+          centerMode
+          centerSlidePercentage={50}
           showThumbs={false}
           infiniteLoop={true}
-          showIndicators={true}
+          showIndicators={false}
           showStatus={false}
           autoPlay={true}
         >

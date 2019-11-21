@@ -17,7 +17,6 @@ export default () => {
   return (
     <div
       style={{
-        backgroundColor: "var(--light-gray)",
         color: "var(--main-purple)",
       }}
     >

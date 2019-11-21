@@ -4,8 +4,9 @@
   --main-purple: #3d2e3c;
   --main-purple-lightened: #70616f;
   --main-black: #221f1f;
+  --main-green: #3c3d2e;
   --main-white: #fff;
-  --light-gray: #d9d9d9;
+  --light-gray: #f4f4f4;
 }
 
 h1,
@@ -101,10 +102,31 @@ h5 {
   column-gap: 2rem;
 }
 
-.membershipOptions-container {
+#membershipOptions-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
+}
+
+.mtm-card,
+.con-card {
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.mtm-card:hover,
+.con-card:hover {
+  border: 2px solid var(--main-purple);
+  cursor: pointer;
+}
+
+.membership-button {
+  background-color: var(--main-purple);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 #membership-benefits {
@@ -144,7 +166,7 @@ h5 {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto, 1fr);
   }
-  .membershipOptions-container {
+  #membershipOptions-container {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto, 1fr);
     row-gap: 2rem;
